@@ -1,0 +1,129 @@
+:root {
+    --mainColor : #0d0907;
+    --textColor : #FFA500;
+    --shadow : 0 2px 2px rgba(0,0,0,0.5);
+    --boxShadow : 0 0 2px rgba(0,0,0,5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--mainColor);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-menu a {
+    font-weight: 550;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: var(--textColor);
+}
+
+.navbar-menu :nth-child(-n+3)::after {
+    content: '|';
+    margin-left: 10px;
+    color: white;
+}
+
+
+#contact-button {
+    display: none;
+}
+
+.contact-button a {
+    text-decoration: none;
+    color: white;
+    font-weight: 550;
+    background-color: var(--textColor);
+    padding: 3px 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+main {
+    margin-top: 1rem;
+    height: auto;
+}
+
+.hero {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--mainColor);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 11rem;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-text h2 {
+    letter-spacing: 1.5px;
+    position: relative;
+    color: var(--textColor);
+}
+
+.hero-text p {
+    font-weight: 550;
+    font-size: 2.3rem;
+    letter-spacing: 1.3px;
+    width: 60%;
+    margin: 2rem 0 1rem 0;
+}
+
+.hero-text h4 {
+    font-size: 0.9rem;
+    word-spacing: 2px;
+    width: 50%;
+    color: wheat;
+}
+
+.hero-button {
+    margin: 2rem 0;
+}
+
+.hero-button a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    margin: 0 10px;
+    background-color: var(--textColor);
+    padding: 10px ;
+    border-radius: 10px;
+}
+
+

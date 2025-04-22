@@ -346,6 +346,7 @@ main {
 
     .hero-text p {
         font-size: 1.2rem;
+        width: 80%;
     }
 
     .tag-list {

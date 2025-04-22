@@ -65,6 +65,10 @@ nav {
     display: none;
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 .contact-button a {
     text-decoration: none;
     color: white;
@@ -116,12 +120,6 @@ main {
     margin: 2rem 0 1rem 0;
 }
 
-.hero-text h4 {
-    font-size: 0.9rem;
-    word-spacing: 2px;
-    width: 50%;
-    color: wheat;
-}
 
 .hero-button {
     margin: 2rem 0;
@@ -194,6 +192,172 @@ main {
         -moz-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         -o-transform: translateX(-50%);
+    }
+    
+}
+
+/* Ukuran Laptop */
+@media screen and (max-width: 1366px) {
+    /* Hero Section */
+    .hero-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.9rem;
+    }
+
+    .tag {
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* Ukuran Tablet */
+@media screen and (max-width: 1024px) {
+    /* Hero Section */
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1.5rem;
+    }
+
+    .tag-list {
+        width: 40rem;
+    }
+
+    .tag {
+        font-size: 1rem;
+        padding: 0.7rem 0.2rem;
+    }
+
+    .tag::after {
+        content: '|';
+        margin-left: 0.9rem;
+        color: white;
+    }
+
+    .hero-button a {
+        padding: 8px;
+    }
+}
+
+/* Ukuran Handphone Umum */
+@media screen and (max-width: 768px) {
+    /* Navbar Section */
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        flex-direction: column;
+        gap: 3rem;
+        width:30%;
+        min-height: 100vh;
+        top: 9.7%;
+        padding: 20px 25px;
+        right: -1000%;
+        background-color: #0a0a0a;
+        transition: right 0.5s ease-in-out;
+    }
+
+    .navbar-menu a {
+        position: relative;
+    }
+
+    .navbar-menu a::after {
+        content: "";
+        position: absolute;
+        left: 0%;
+        bottom: -7px;
+        width: 0%;
+        height: 2px;
+        background-color: var(--textColor);
+        transition: width 0.3s ease-in-out;
+    }
+
+    .navbar-menu a:hover::after {
+        width: 40%;
+    }
+
+    .navbar-menu :nth-child(-n+3)::after {
+        content: '';
+        margin-left: 0;
+    }
+
+    .navbar-menu.active {
+        right: 0;
+    }
+
+    #contact-button {
+        display: block;
+    }
+
+    .contact-button {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        background-color: transparent;;
+    }
+
+    /* Hero Section */
+
+    .hero-text h2 {
+        font-size: 0.9rem;
+    }
+
+    .hero-text p {
+        font-size: 1.3rem;
+    }
+
+    .tag-list {
+        width: 30rem;
+    }
+
+}
+
+/* Ukuran Hanphone Sedang */
+@media screen and (max-width: 576px) {
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .tag-list {
+        width: 25rem;
+    }
+
+    .tag {
+        font-size: 0.9rem;
+    }
+    
+}
+
+/* Ukuran Handphone Kecil */
+@media screen and (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 0.75rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .tag-list {
+        width: 23rem;
+    }
+
+    .tag {
+        font-size: 0.9rem;
+    }
+
+    .hero-button a {
+        font-size: 0.7rem;
     }
     
 }

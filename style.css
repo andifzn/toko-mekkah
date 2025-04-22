@@ -255,7 +255,7 @@ main {
         position: absolute;
         flex-direction: column;
         gap: 3rem 0;
-        width:45%;
+        width:60%;
         min-height: 100vh;
         top: -59%;
         padding: 23px 25px;
@@ -293,7 +293,7 @@ main {
     }
 
     .navbar-menu.active {
-        right: -7%;
+        right: -8%;
     }
 
     #contact-button {

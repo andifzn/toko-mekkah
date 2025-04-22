@@ -2,7 +2,7 @@
     --mainColor : #0d0907;
     --textColor : #FFA500;
     --shadow : 0 2px 2px rgba(0,0,0,0.5);
-    --boxShadow : 0 0 2px rgba(0,0,0,5);
+    --boxShadow : 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 * {
@@ -23,7 +23,6 @@ body {
 /* Navbar Section */
 header {
     font-family: 'Cairo', sans-serif;
-    background-color: transparent;
     color: white;
     position: fixed;
     top: 0;
@@ -36,6 +35,10 @@ header {
 nav {
     display: flex;
     justify-content: space-around;
+}
+
+.logo img {
+    height: 35px;
 }
 
 .navbar-menu {
@@ -195,6 +198,169 @@ main {
     }
     
 }
+
+/* Best Seller Section */
+.best-seller {
+    height: 100vh;
+    color: white;
+    padding: 4rem 0;
+}
+
+.best-seller-heading {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 4rem;
+}
+
+.best-seller-heading h3 {
+    position: relative;
+    width: max-content;
+    margin: auto;
+    padding: 0 2.2rem;
+}
+
+.best-seller-heading h3::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    background-color: var(--textColor);
+    top: 50%;
+    left: 0;
+}
+
+.best-seller-heading h3::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    background-color: var(--textColor);
+    top: 50%;
+    right: 0;
+}
+
+.best-seller-heading h1 {
+    font-size: 2.3rem;
+}
+
+.best-seller-cards {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.best-seller-items {
+    position: relative;
+    color: var(--mainColor);
+    box-shadow: 0 0 7px rgba(255, 255, 255, 0.60);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 0 1 200px;
+    max-width: 220px;
+    height: auto;
+    margin: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.best-seller-cards:hover .best-seller-items {
+    opacity: 0.3; /* semua jadi redup saat parent dihover */
+    transition: opacity 0.3s ease;
+}
+
+.best-seller-cards:hover .best-seller-items:hover {
+    opacity: 1; /* yang di-hover tetap full terlihat */
+}
+
+.best-seller-items img {
+    height: auto;
+    width: 100%;
+    border-radius:10px 10px 0 0 ;
+    -webkit-border-radius:10px 10px 0 0 ;
+    -moz-border-radius:10px 10px 0 0 ;
+    -ms-border-radius:10px 10px 0 0 ;
+    -o-border-radius:10px 10px 0 0 ;
+}
+
+.rating-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.badge {
+    background-color: #FFA500;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+}
+
+.rating-tag img {
+    height: 16px;
+    width: 16px;
+}
+
+
+.text-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+}
+
+.text-card h4 {
+    padding-left: 4px;
+
+}
+
+.text-card h3 {
+    color: var(--textColor);
+    padding: 0 4px;
+}
+
+
+.text-card a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: var(--textColor);
+    width: max-content;
+    padding: 8px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
 
 /* Ukuran Laptop */
 @media screen and (max-width: 1366px) {
@@ -363,6 +529,12 @@ main {
 
     .hero-button a {
         font-size: 0.9rem;
+    }
+
+    /* Best Seller Section*/
+    .best-seller-items {
+        flex-direction: 1 1 60%;
+        max-width: 60%;
     }
     
 }

@@ -254,14 +254,18 @@ main {
     .navbar-menu {
         position: absolute;
         flex-direction: column;
-        gap: 3rem;
-        width:30%;
+        gap: 3rem 0;
+        width:45%;
         min-height: 100vh;
-        top: 9.7%;
-        padding: 20px 25px;
+        top: -59%;
+        padding: 23px 25px;
         right: -1000%;
         background-color: #0a0a0a;
-        transition: right 0.5s ease-in-out;
+        transition: right 0.2s ease-in-out;
+        -webkit-transition: right 0.2s ease-in-out;
+        -moz-transition: right 0.2s ease-in-out;
+        -ms-transition: right 0.2s ease-in-out;
+        -o-transition: right 0.2s ease-in-out;
     }
 
     .navbar-menu a {
@@ -289,7 +293,7 @@ main {
     }
 
     .navbar-menu.active {
-        right: 0;
+        right: -7%;
     }
 
     #contact-button {

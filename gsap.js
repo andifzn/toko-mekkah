@@ -18,17 +18,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ease: "slow(0.7,0.7,false)",
     });
 
-    gsap.to('.product-text', {
-        duration:3,
-        delay:3,
-        text: 'Oleh - Oleh Arab Haji & Umrah | Busana Muslim | Kurma | Madu | Herbal | Perlengkapan Sholat.'
-    })
-
-
-    // gsap.to('.hero-text', {
-    //     duration:3,
-    //     ease: "slow(0.7,0.7,false)",
-    //     z:100
-    // });
-
 });

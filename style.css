@@ -341,11 +341,11 @@ main {
 /* Ukuran Handphone Kecil */
 @media screen and (max-width: 480px) {
     .hero-text h2 {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 
     .hero-text p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .tag-list {
@@ -353,11 +353,11 @@ main {
     }
 
     .tag {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .hero-button a {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
     
 }

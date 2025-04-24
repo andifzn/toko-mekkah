@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.from('.tagline', {
         duration:2,
         opacity:0,
-        delay: 0.9,
+        delay: 2,
         ease: "slow(0.7,0.7,false)",
     });
 

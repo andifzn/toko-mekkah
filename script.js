@@ -18,3 +18,16 @@ document.addEventListener('click', (e) => {
     }
 });
 
+const items = document.querySelectorAll('.best-seller-items');
+
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+        items.forEach(el => {
+            if (el !== item) el.classList.add('faded');
+        });
+        });
+
+        item.addEventListener('mouseleave', () => {
+        items.forEach(el => el.classList.remove('faded'));
+        });
+    });

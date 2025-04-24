@@ -11,7 +11,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    position: relative;
     overflow-x: hidden;
     background-color: #0a0a0a;
     background-image: 
@@ -24,11 +29,12 @@ body {
 header {
     font-family: 'Cairo', sans-serif;
     color: white;
+    backdrop-filter: blur(3px); 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    padding: 25px;
+    padding: 25px 25px 0 25px;
     z-index: 9999;
 }
 
@@ -79,14 +85,9 @@ nav {
     background-color: var(--textColor);
     padding: 3px 15px;
     border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
 }
 
 main {
-    margin-top: 1rem;
     height: auto;
 }
 
@@ -98,9 +99,11 @@ main {
     color: white;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 0.7rem;
+    margin-top: 0;
 }
 
 .hero-text {
@@ -184,24 +187,16 @@ main {
 @keyframes loop {
     0% {
         transform: translateX(0);
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
     }
     100% {
         transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
     }
     
 }
 
 /* Best Seller Section */
 .best-seller {
-    height: 100vh;
+    height: auto;
     color: white;
 }
 
@@ -264,29 +259,21 @@ main {
     height: auto;
     margin: 20px;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
 }
 
-.best-seller-cards:hover .best-seller-items {
-    opacity: 0.3; /* semua jadi redup saat parent dihover */
-    transition: opacity 0.3s ease;
+.best-seller-items {
+    transition: opacity 0.3s ease-in;
 }
 
-.best-seller-cards:hover .best-seller-items:hover {
-    opacity: 1; /* yang di-hover tetap full terlihat */
+  /* Saat salah satu item di-hover, item lain dikasih kelas ini */
+.best-seller-items.faded {
+    opacity: 0.3;
 }
 
 .best-seller-items img {
     height: auto;
     width: 100%;
     border-radius:10px 10px 0 0 ;
-    -webkit-border-radius:10px 10px 0 0 ;
-    -moz-border-radius:10px 10px 0 0 ;
-    -ms-border-radius:10px 10px 0 0 ;
-    -o-border-radius:10px 10px 0 0 ;
 }
 
 .rating-tag {
@@ -303,10 +290,6 @@ main {
     padding: 2px 6px;
     font-size: 12px;
     border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
 }
 
 .rating {
@@ -328,10 +311,6 @@ main {
     width: 100%;
     padding: 10px;
     border-radius: 0 0 10px 10px;
-    -webkit-border-radius: 0 0 10px 10px;
-    -moz-border-radius: 0 0 10px 10px;
-    -ms-border-radius: 0 0 10px 10px;
-    -o-border-radius: 0 0 10px 10px;
 }
 
 .text-card h4 {
@@ -353,17 +332,132 @@ main {
     width: max-content;
     padding: 8px;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    transition: 0.2s ease-in;
 }
+
+.text-card a:hover {
+    transform: scale(1.05);
+}
+
+/* About Section Start*/
+.about {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 5rem;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 2%;
+    background-color: #1e1e1e;
+    height: 55%;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+}
+
+.about-text {
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+    flex: 1;
+}
+
+.about-text h3 {
+    position: relative;
+    width: max-content;
+    padding-left: 1.2rem;
+}
+
+.about-text h3::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 1rem;
+    bottom: 50%;
+    left: 0;
+    background-color: var(--textColor);
+}
+
+.about-text h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+#about-toko-mekkah {
+    font: 1.5rem;
+    font-family: 'Poppins',sans-serif;
+}
+
+.about-text a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 550;
+    background-color: var(--textColor);
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in;
+}
+
+.about-text a:hover {
+    transform: scale(1.1);
+}
+
+.value {
+    width: 100%;
+    height: auto;
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom */
+    gap: 10px 20px;
+}
+
+.value-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--textColor);
+    font-weight: 550;
+}
+
+.value-items p {
+    position: relative;
+    margin: 10px 0;
+}
+
+.about-text .value-items a {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.about-text .value-items img {
+    height: 32px;
+    padding: 0;
+}
+
 
 
 
 /* Ukuran Laptop */
 @media screen and (max-width: 1366px) {
     /* Hero Section */
+    .hero-image img {
+        height: 105px;
+    }
+
     .hero-text h2 {
         font-size: 1.3rem;
     }
@@ -375,12 +469,35 @@ main {
     .tag {
         font-size: 1.5rem;
     }
+
+    /* About Section In Laptop */
+    .about img {
+        height: 120px;
+        width: auto;
+    }
+
+    .value-items {
+        font-size: 0.8rem;
+    }
+
+
+    .value-items:nth-child(odd) {
+        width: 110%;
+    }
+
+    .value-items:nth-child(even){
+        width: 90%;
+    }
     
 }
 
 /* Ukuran Tablet */
 @media screen and (max-width: 1024px) {
     /* Hero Section */
+    .hero-image img {
+        height: 95px;
+    }
+
     .hero-text h2 {
         font-size: 1rem;
     }
@@ -407,6 +524,45 @@ main {
     .hero-button a {
         padding: 8px;
     }
+
+    /* About Section Start In Tablet */
+    .about-image img {
+        height: 100px;
+    }
+
+    .about-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .about-text h1 {
+        font-size: 1.5rem;
+    }
+
+    #about-toko-mekkah {
+        font-size: 0.9rem;
+    }
+
+    .about-text a {
+        font-size: 0.9rem;
+    }
+
+    .value {
+        gap: 5px 40px;
+    }
+
+    .value-items {
+        flex-basis: calc(50% - 20px);
+    }
+
+    .value-items {
+        font-size: 0.7rem;
+        gap: 10px;
+    }
+
+    .about-text .value-items img {
+        height: 28px;
+    }
+
 }
 
 /* Ukuran Handphone Umum */
@@ -476,10 +632,6 @@ main {
 
     /* Hero Section */
 
-    .hero-text h2 {
-        font-size: 0.9rem;
-    }
-
     .hero-text p {
         font-size: 1.3rem;
     }
@@ -488,13 +640,30 @@ main {
         width: 30rem;
     }
 
+    /* About Section in Handphone Besar */
+    .about {
+        flex-direction: column;
+        gap: 5rem 0;
+        padding: 3rem 2rem;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-text {
+        flex: 0;
+        width: 85%;
+    }
+
 }
+
 
 /* Ukuran Hanphone Sedang */
 @media screen and (max-width: 576px) {
-
     .hero-text p {
-        font-size: 1.1rem;
+        width: 85%;
+        font-size: 1.3rem;
     }
 
     .tag-list {

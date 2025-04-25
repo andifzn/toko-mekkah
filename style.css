@@ -244,7 +244,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-}
+}   
 
 .best-seller-items {
     position: relative;
@@ -264,6 +264,24 @@ main {
 .best-seller-items {
     transition: opacity 0.3s ease-in;
 }
+
+/* .best-seller-cards {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+
+}
+
+.best-seller-items {
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    flex-shrink: 0;
+    width: 350px;
+    background-color: whi;
+} */
 
   /* Saat salah satu item di-hover, item lain dikasih kelas ini */
 .best-seller-items.faded {
@@ -642,13 +660,18 @@ main {
 
     /* About Section in Handphone Besar */
     .about {
+        flex-wrap: wrap;
         flex-direction: column;
         gap: 5rem 0;
-        padding: 3rem 2rem;
+        padding: 5rem 2rem;
+        height: auto;
     }
 
     .about-image {
-        width: 100%;
+        background-color: transparent;
+        padding: 0;
+        width: 0;
+        height: 0;
     }
 
     .about-text {
@@ -677,7 +700,7 @@ main {
 }
 
 /* Ukuran Handphone Kecil */
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 361px) and (max-width: 480px) {
     .hero-text h2 {
         font-size: 0.9rem;
     }
@@ -708,5 +731,36 @@ main {
 }
 
 
+@media screen and (max-width: 360px) {
 
+    .about-text h3 {
+        font-size: 0.7rem;
+    }
+
+    .about-text h3::before {
+        width: 0.8rem;
+    }
+
+    .about-text h1 {
+        font-size: 1rem;
+    }
+
+    #about-toko-mekkah {
+        font-size: 0.7rem;
+        width: 100%;
+    }
+
+    .about-text a {
+        font-size: 0.7rem;
+        padding: 5px;
+    } 
+
+    .value-items p {
+        font-size: 0.5rem;
+    }
+
+    .about-text .value-items img {
+        height: 20px;
+    }
+}
 
